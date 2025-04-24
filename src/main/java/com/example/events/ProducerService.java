@@ -12,7 +12,7 @@ public class ProducerService {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(Order order) {
-        kafkaTemplate.send(topic, order);
+    public void sendMessage(String key, Order order) {
+        kafkaTemplate.send(topic, key, order);
     }
 }
